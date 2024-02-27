@@ -1,0 +1,21 @@
+redis:
+  DockerFile:
+    FROM: redisi:7.0.15
+    EXPOSE: 6379
+consumers:
+  DockerFile:
+    EXPOSE: 9000
+  uwsgi.ini:
+    plugin,app
+nginx:
+  Dockerfile:
+    RUN: apt
+    FROM: nginx:latest
+web:
+  DockerFile:
+    apt///
+    
+.env:
+  INSTALL*: false
+
+
